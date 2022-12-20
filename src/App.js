@@ -16,7 +16,7 @@ const App = () => {
   };
   const handleOk = async () => {
     await axios
-      .post("https://port-0-fastapi-ngsnp25lbt6bmuh.gksl2.cloudtype.app/new", {
+      .post("/new", {
         guest: guestName,
         pet: petName,
       })
@@ -58,7 +58,7 @@ const App = () => {
 
   const callApiNext = async () => {
     await axios
-      .get("https://port-0-fastapi-ngsnp25lbt6bmuh.gksl2.cloudtype.app/next")
+      .get("/next")
       .then((res) => notifySuccess(res.data.message))
       .catch((e) => notifyError(e.message));
   };
